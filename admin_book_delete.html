@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>boda Library</title>
+<link rel="stylesheet" type="text/css" href="../css/admin_book_delete.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+		<header class="header">
+		<img id="boda" src="../image/BODA_logo.png" alt="boda library" onclick="location.href='main_home.html'">
+		<a href="main_home.html"><span id="logout">Logout</span></a>
+		 </header>
+		
+		<main class="main">
+		<nav class="side_nav">
+			<ul>
+				<li class="rtPage"><a href="admin_rent.html">대출/반납</a></li>
+				<li>회원관리</li>
+				<li class="bmPage"><a href="admin_book_delete.html">도서관리</a></li>
+			</ul>
+		</nav>
+
+		<section class="book_list">
+		<div class="content_top">
+		<span class="subject">도서관리</span>
+		<a href="admin_book_add.html"><input id="addBtn" type="button" value="+도서추가"/></a>
+		</div>
+		<input id="bookSrch" type="text" onkeyup="searchBook()" placeholder="  도서 아이디 또는 도서명을 입력하세요."/>
+		<div class="content">
+		<table>
+	<thead>
+						<tr>
+							<th class="idx">번호</th>
+							<th class="id">도서id</th>
+							<th class="callNum">청구기호</th>
+							<th class="name">도서명</th>
+							<th class="writer">저자</th>
+							<th class="publisher">출판사</th>
+							<th id="addDate">등록날짜</th>
+							<th id="rentState">대출상태</th>
+							<th id="delte">도서 삭제</th>
+						</tr>
+					</thead>
+		</table>
+		</div>
+		</section>
+		</main>
+
+		<footer class="footer"> </footer>
+	
+</body>
+<script type="text/javascript">
+//엔터시 검색 && java의 정석이 존재한다고 가정
+function searchBook()  {
+	var bookSrch = document.querySelector("#bookSrch");
+	if (window.event.keyCode == 13) {
+		if(bookSrch.value == 'java의 정석'){
+			location.href="admin_book_delete_2.html";
+		}else{
+			alert("존재하지 않는 도서입니다.");
+			bookSrch.value="";
+			bookSrch.focus();
+		}
+	}
+}
+</script>
+</html>

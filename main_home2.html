@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/450c3e4f96.js" crossorigin="anonymous"></script>
+<script src="../js/main_home_active.js" defer></script>
+<title>boda library</title>
+<link rel="stylesheet" href="../css/main_home_style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<script>
+/*  */
+</script>
+
+</head>
+<body>
+	<nav class="navbar">
+		<ul class="icons">
+			<li><i class="fab fa-twitter-square"></i></li>	
+			<li><i class="fab fa-facebook-square"></i></li>	
+			<li><i class="fab fa-instagram-square"></i></li>	
+		</ul>
+		
+    <div class="menu-wrapper">
+      <ul class="menu">
+
+        <li class="menu1" onclick="doDisplay()"><i class="fas fa-user-circle"></i></li>
+      </ul>
+    </div>
+    </nav>
+  <!-- 토글하면 나오는 메뉴바 -->
+  <nav class="navbar2">
+	   <ul class="side_menu1">
+	        <li><a href="#"><b>대출도서 관리</b></a>
+	        	<a href="boda_book_inquery.jsp">대출도서 조회하기</a>
+	        	<a href="boda_date_extend.jsp">대출도서 연장하기</a>
+	        	<a href="boda_check_overdate.jsp">연체일 확인하기</a>
+	        	<a href="request-book.html"><b>희망도서관리</b></a></li>
+	        <li><a href="boda_edit_info.jsp"><b>회원정보 수정</b></a>
+	        	<a href="main_home.html"><b>로그아웃</b></a>
+	        </li>
+	   </ul>
+   </nav>
+	
+	<header>
+		<ul class="home_logo">
+			<li><a href="main_home.html"><img src="../image/BODA_logo.png"></a></li>
+		</ul>
+		<form class="home_search_bar">
+			<input type="text" id="home_input" placeholder="무엇을 찾고 계신가요?">
+			<button type="button" id="home_btn" onclick="nextPage()"><img src="../image/BODA_search.png" ></button>
+		</form>
+	</header>
+	
+	<footer>
+		
+	</footer>
+		
+</body>
+<script type="text/javascript">
+	function nextPage(){
+	    location.href="book-search.html";
+	}
+/*
+
+*/
+</script>
+</html>

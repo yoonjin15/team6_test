@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/book-search.css">
+  <link rel="stylesheet" href="../css/nav_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/291d90d700.js" crossorigin="anonymous"></script>
+  <title>boda Library</title>
+  <script src="../js/book-search.js" defer></script>
+  <script src="../js/nav_active.js" defer></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <ul class="logo">
+        <li><img src="../img/BODA_logo.png" onclick="location.href='main_home.html'"></li>
+      </ul>
+      <form class="search_bar">
+        <input type="text" id="input" placeholder="무엇을 찾고 계신가요?">
+        <button type="submit" id="btn" onkeydown="enterSearch()"><img id="nav_img" src="../img/BODA_search.png"></button>
+      </form>
+    </div>
+
+    <div class="menu-wrapper">
+      <ul class="menu">
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li class="menu1" onclick="doDisplay()"><i class="fas fa-user-circle"></i></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 토글하면 나오는 메뉴바 -->
+  <nav class="navbar2">
+    <ul class="side_menu1">
+      <li><a href="#"><b>대출도서 관리</b></a>
+        <a href="#">대출도서 조회하기</a>
+        <a href="#">대출도서 연장하기</a>
+        <a href="#">연체일 확인하기</a>
+        <a href="#"><b>희망도서관리</b></a></li>
+      <li><a href="#"><b>회원정보 수정</b></a>
+        <a href="#"><b>로그아웃</b></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- <header>
+    <a class="logo-link" href="#"><img class="logo" src="img/boda-logo.png" alt="logo-img"></a>
+    <div class="search-bar">
+      <input class="search" type="search" placeholder="무엇을 찾고 계신가요?"></input>
+      <button class="search-button"><img src="img/search-button.png" alt="serarch-button-img"></button>
+    </div>
+    <div class="member-navbar">
+      <span class="login"><a href="#">Login</a></span>
+      <span class="sign-up"><a href="#">Sign up</a></span>
+      <a href="#"><i class="fas fa-user"></i></a>
+    </div>
+  </header> -->
+
+  <!--  Content navbar-->
+  <section class="content-navbar-all">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="content-navbar">
+          <span class="content-info">도서검색</span>
+        </div>
+        <div class="content-directory">
+          <i class="fas fa-home"></i>
+          <span class="directory-root"> > 도서검색</span>
+        </div>
+      </div>
+      <button class="more-button">더 보기</button>
+    </div>
+  </section>
+
+  <!-- Books info -->
+  <section class="books">
+    <div class="books-wrapper">
+      <div class="books-article">
+        <span class="sequence">1</span>
+        <img src="../img/book1.png" alt="None Image">
+        <div class="books-information">
+          <div class="books-info-wrapper">
+            <span class="book-keyword">Java</span>
+            <span class="book-title">: Java의 정석 : 최신 Java 8.0 포함</span>
+          </div>
+          <div class="book-info">
+            <span class="book-writer">남궁성</span>
+            <span class="book-publisher">도우출판</span>
+            <span class="book-publication-date">2016</span>
+          </div>
+          <div class="check-out-wrapper">
+            <span class="check-out-status-available">대출가능</span>
+            <button class="check-out-detail-button-one"><i class="fas fa-sort-up"></i></button>
+            <div class="check-out-detail-one">
+              <ul class="check-out-detail-table">
+                <li>도서번호</li>
+                <li>소장위치</li>
+                <li>상태</li>
+                <li>예약하기</li>
+              </ul>
+              <ul class="check-out-detail-table-content">
+                <li>SD04501</li>
+                <li>종합자료실</li>
+                <li class="check-out-status-available">대출가능</li>
+                <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="books-article">
+        <span class="sequence">2</span>
+        <img src="../img/book2.png" alt="None Image">
+        <div class="books-information">
+          <div class="book-info-wrapper">
+            <span class="book-keyword">Java</span>
+            <span class="book-title">: 이펙티브 자바 Effective Java 3/E</span>
+          </div>
+          <div class="book-info">
+            <span class="book-writer">조슈아 블로크</span>
+            <span class="book-publisher">insight</span>
+            <span class="book-publication-date">2018</span>
+          </div>
+          <div class="check-out-wrapper">
+            <span class="check-out-status-unavailable">대출불가</span>
+            <button class="check-out-detail-button-two"><i class="fas fa-sort-up"></i></button>
+            <div class="check-out-detail-two">
+              <ul class="check-out-detail-table">
+                <li>도서번호</li>
+                <li>소장위치</li>
+                <li>상태</li>
+                <li>예약하기</li>
+              </ul>
+              <ul class="check-out-detail-table-content">
+                <li>SD13295</li>
+                <li>보존서고</li>
+                <li class="check-out-status-unavailable">대출불가</li>
+                <li><a class="reservate" href="javascript:void(0);" onclick="unavailable();return false;">예약불가</li>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="books-article">
+        <span class="sequence">3</span>
+        <img src="../img/book3.png" alt="None Image">
+        <div class="books-information">
+          <div class="books-info-wrapper">
+            <span class="book-keyword">Java</span>
+            <span class="book-title">: 모던 자바 인 액션</span>
+          </div>
+          <div class="book-info">
+            <span class="book-writer">라울 게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트</span>
+            <span class="book-publisher">한빛미디어</span>
+            <span class="book-publication-date">2019</span>
+          </div>
+          <div class="check-out-wrapper">
+            <span class="check-out-status-in-using">대출 중</span>
+            <button class="check-out-detail-button-three"><i class="fas fa-sort-up"></i></button>
+            <div class="check-out-detail-three">
+              <ul class="check-out-detail-table">
+                <li>도서번호</li>
+                <li>소장위치</li>
+                <li>상태</li>
+                <li>예약하기</li>
+              </ul>
+              <ul class="check-out-detail-table-content">
+                <li>SD02557</li>
+                <li>종합자료실</li>
+                <li class="check-out-status-in-using">대출 중</li>
+                <li><a class="reservate" href="javascript:void(0);" onclick="reservateEvent();return false;">예약가능</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

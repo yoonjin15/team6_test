@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/450c3e4f96.js" crossorigin="anonymous"></script>
+<script src="#" defer></script>
+<title>boda library forgot Password2</title>
+<link rel="stylesheet" href="../css/signup_style2.css" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<script>
+/*  */
+</script>
+
+</head>
+<body  class="bg">
+		<section class="rectangle">
+		<div></div>
+		<ul class="login_logo">
+			<li><img src="../image/BODA_logo.png" onclick="location.href='main_home.html'"></li>
+			<li>회원정보</li
+			>
+		</ul>
+		
+		
+		<form class="login_form">	
+			<input id="name" placeholder="이름 ">	
+			<input id="email" placeholder="이메일">
+			<button type="submit" id="cerBtn">인증요청</button>
+			<br>
+			<input type="password" id="pw" placeholder="비밀번호 ">
+			<input type="password" id="pwcheck" placeholder="비밀번호">
+		</form>
+		
+		<ul class="logBtn">
+			<li><button type="submit" id="logBtn" onclick="complite()" >완료</button></li>
+		</ul>
+		
+	</section>
+</body>
+<script type="text/javascript">
+	var logBtn = document.querySelector("#logBtn");
+	var nameObj = document.querySelector("#name");
+	var emailObj = document.querySelector("#email");
+	var pwObj = document.querySelector("#pw");
+	var pwcheckObj = document.querySelector("#pwcheck");
+	function complite(){
+		if(nameObj.value==""){
+			alert("이름을 입력해주세요");
+			nameObj.focus();
+		}else if(emailObj.value==""){
+			alert("이메일을 입력해주세요");
+			emailObj.focus();
+		}else if(pwObj.value==""){
+			alert("비밀번호를 입력해주세요");
+			pwObj.focus();
+		}else if(pwcheckObj.value==""){
+			alert("재확인 비밀번호를 입력해주세요");
+			pwObj.focus();
+		}
+		else if(pwObj.value!=pwcheckObj.value){
+			alert("비밀번호가 일치하지 않습니다.");
+			pwcheckObj.focus();
+		}else{
+			alert("가입되었습니다.");
+			location.href = "main_home2.html";
+		}
+		
+	}
+
+
+</script>
+</html>

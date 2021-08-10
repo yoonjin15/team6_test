@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>boda Library</title>
+<link rel="stylesheet" type="text/css" href="../css/admin_rent.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<script src="../js/admin_rent.js"></script>
+</head>
+<body>
+	
+		<header class="header">
+		<img id="boda" src="../image/BODA_logo.png" alt="boda library" onclick="location.href='main_home.html'">
+		<a href="main_home.html"><span id="logout">Logout</span></a>
+		 </header>
+		
+		<main class="main">
+		<nav class="side_nav">
+			<ul>
+				<li class="rtPage"><a href="admin_rent.html">대출/반납</a></li>
+				<li>회원관리</li>
+				<li class="bmPage"><a href="admin_book_delete.html">도서관리</a></li>
+			</ul>
+		</nav>
+
+		<section class="book_list">
+		<div class="content_top">
+		<span class="subject">대출 / 반납</span>
+		</div>
+		<input id="memSrch" type="text" onkeyup="searchMember()" placeholder="   회원아이디를 입력하세요."/>
+		<div class="content"></div>
+		</section>
+		</main>
+
+		<footer class="footer"> </footer>
+	
+</body>
+
+
+
+</html>

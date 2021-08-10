@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/request-book.css">
+  <link rel="stylesheet" href="../css/nav_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/291d90d700.js" crossorigin="anonymous"></script>
+  <script src="../js/request-book.js" defer></script>
+  <script src="../js/nav_active.js" defer></script>
+  <title>boda Library</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <ul class="logo">
+        <li><img src="../img/BODA_logo.png" onclick="location.href='main_home.html'"></li>
+      </ul>
+      <form class="search_bar">
+        <input type="text" id="input" placeholder="무엇을 찾고 계신가요?">
+        <button type="submit" id="btn" onkeydown="enterSearch()"><img id="nav_img" src="../img/BODA_search.png"></button>
+      </form>
+    </div>
+
+    <div class="menu-wrapper">
+      <ul class="menu">
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li class="menu1" onclick="doDisplay()"><i class="fas fa-user-circle"></i></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 토글하면 나오는 메뉴바 -->
+  <nav class="navbar2">
+    <ul class="side_menu1">
+      <li><a href="#"><b>대출도서 관리</b></a>
+        <a href="#">대출도서 조회하기</a>
+        <a href="#">대출도서 연장하기</a>
+        <a href="#">연체일 확인하기</a>
+        <a href="#"><b>희망도서관리</b></a></li>
+      <li><a href="#"><b>회원정보 수정</b></a>
+        <a href="#"><b>로그아웃</b></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- <header>
+    <a class="logo-link" href="#"><img class="logo" src="img/boda-logo.png" alt="logo-img"></a>
+    <div class="search-bar">
+      <input class="search" type="search" placeholder="무엇을 찾고 계신가요?"></input>
+      <button class="search-button"><img src="img/search-button.png" alt="serarch-button-img"></button>
+    </div>
+    <div class="member-navbar">
+      <span class="login"><a href="#">Login</a></span>
+      <span class="sign-up"><a href="#">Sign up</a></span>
+      <a href="#"><i class="fas fa-user"></i></a>
+    </div>
+  </header> -->
+
+  <!--  Content navbar-->
+  <section class="navbar">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="content-navbar">
+          <span class="content-info">희망도서 신청내역</span>
+        </div>
+        <div class="content-directory">
+          <i class="fas fa-home"></i>
+          <span class="directory-root"> > 마이 페이지 > 희망도서 신청내역</span>
+        </div>
+      </div>
+      <button class="request-button" onClick="location.href='request-book-application.html'">신청하기</button>
+    </div>
+  </section>
+
+  <!-- My page & Request List -->
+  <div class="mypage-request-list">
+
+    <!-- My page navbar -->
+    <section class="mypage-navbar">
+      <div class="mypage">
+        <ul class="mypage-list">
+          <li class="mypage-navbar-header">마이페이지</li>
+          <li><a href="#">회원정보 수정</a></li>
+          <li><a href="#">대출도서 조회</a></li>
+          <li><a href="#">대출도서 연장</a></li>
+          <li><a href="#">연체일 확인</a></li>
+          <li><a href="#">희망도서 신청</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Request List -->
+    <section class="request-wrapper-all">
+      <div class="request-wrapper">
+        <div class="request-header">
+          <span>번호</span>
+          <span>신청자료명</span>
+          <span>신청일</span>
+          <span>진행상태</span>
+        </div>
+        <div class="request-contents">
+          <div class="request-content">
+            <span class="sequence">2</span>
+            <span class="request-name">구멍가게 코딩단 Spring Boot편</span>
+            <span class="application-date">2015.05.16</span>
+            <span class="progress">신청완료</span>
+          </div>
+
+          <div class="request-content">
+            <span>1</span>
+            <span>왜 세계의 절반을 굶주리는가?</span>
+            <span>2015.03.20</span>
+            <span>취소 됨</span>
+          </div>
+        </div>
+        <div class="page-wrapper">
+          <div class="page-content">
+            <i class="fas fa-caret-left"></i>
+            <span class=><a class="page-number" href="#">1</a></span>
+            <i class="fas fa-caret-right"></i>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+</body>
+
+</html>

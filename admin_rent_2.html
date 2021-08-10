@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>boda Library</title>
+<link rel="stylesheet" type="text/css" href="../css/admin_rent.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<script src="../js/admin_rent.js"></script>
+</head>
+<body>
+	
+		<header class="header">
+		<img id="boda" src="../image/BODA_logo.png" alt="boda library" onclick="location.href='main_home.html'">
+		<a href="main_home.html"><span id="logout">Logout</span></a>
+		 </header>
+		
+		<main class="main">
+		<nav class="side_nav">
+			<ul>
+				<li class="rtPage"><a href="admin_rent.html">대출/반납</a></li>
+				<li>회원관리</li>
+				<li class="bmPage"><a href="admin_book_delete.html">도서관리</a></li>
+			</ul>
+		</nav>
+
+		<section class="book_list">
+		<div class="content_top">
+		<span class="subject">대출 / 반납</span>
+		</div>
+		<input id="memSrch" type="text" onkeyup="searchMember()" placeholder="   회원아이디를 입력하세요."/>
+		<div class="content_member">
+		<img id="member_image" src="../image/member_image.jpg" alt="member image">
+		<div id="member_name">홍길순</div>
+		</div>
+		<div class="memeber_info">
+		<table id="memInfoTable">
+		<tr><td>아이디</td><td>higirl</td></tr>
+		<tr><td>생년월일</td><td>1988.08.08</td></tr>
+		<tr><td>전화번호</td><td>010-1234-5678</td></tr>
+		<tr><td>주소</td><td>서울시 송파구 강남구 역삼동 123-45</td></tr>
+		</table>
+		</div>
+		
+		<div>
+		<input id="bookIdinput" type="text" placeholder="   대출 도서 ID를 입력하세요."/>
+		<input id="rentBtn" type="button" onclick="rentBook()" value="+대출하기" />
+		</div>
+		<span id="rent_list">대출 목록</span>
+		<div class="content_rent">
+		<table id="rent_list_table">
+					<thead>
+						<tr>
+							<th class="idx">번호</th>
+							<th class="id">도서id</th>
+							<th class="callNum">청구기호</th>
+							<th class="name">도서명</th>
+							<th class="writer">저자</th>
+							<th class="publisher">출판사</th>
+							<th class="rentDate">대출일</th>
+							<th class="returnDate">반납예정일</th>
+							<th class="renewORreturn">연장/반납</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="idx">1</td>
+							<td class="id">bd0030</td>
+							<td class="callNum">810.72.ㄴ78ㅈ</td>
+							<td class="name">JAVA의 정석, 기초편</td>
+							<td class="writer">남궁성</td>
+							<td class="publisher">도우출판</td>
+							<td class="rentDate">21.07.17</td>
+							<td class="returnDate">21.07.31</td>
+							<td class="renewORreturn">
+							<input class="renewBtn" type="button" value="연장" />
+							<input class="returnBtn" type="button" value="반납" />
+							</td>
+						</tr>
+						<tr>
+							<td class="idx">2</td>
+							<td class="id">bd0031</td>
+							<td class="callNum">810.72.ㄴ79ㅈ</td>
+							<td class="name">JAVA의 정석, 심화편</td>
+							<td class="writer">남궁성</td>
+							<td class="publisher">도우출판</td>
+							<td class="rentDate">21.07.17</td>
+							<td class="returnDate">21.07.31</td>
+							<td class="renewORreturn">
+							<input class="renewBtn"  type="button" value="연장" />
+							<input class="returnBtn" type="button" value="반납" />
+							</td>
+						</tr>
+						<tr>
+							<td class="idx">3</td>
+							<td class="id">bd0135</td>
+							<td class="callNum">005.138.ㄱ815ㅎ</td>
+							<td class="name">헬로 자바 프로그래밍</td>
+							<td class="writer">김승현</td>
+							<td class="publisher">프리렉</td>
+							<td class="rentDate">21.07.17</td>
+							<td class="returnDate">21.07.31</td>
+							<td class="renewORreturn">
+							<input class="renewBtn" type="button" value="연장" />
+							<input class="returnBtn" type="button" value="반납" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		
+		</div>
+		</section>
+		</main>
+
+		<footer class="footer"> </footer>
+	
+</body>
+<script type="text/javascript">
+// 도서 반납
+var returnArry = document.querySelectorAll(".returnBtn");
+for (var i = 0; i < returnArry.length; i++) {
+	returnArry[i].addEventListener('click', function() {
+		var returnConfirm = confirm("해당 도서를 반납하시겠습니까?")
+		if (returnConfirm) {
+			this.parentElement.parentElement.remove();
+			i--
+		}
+	})
+}
+
+//도서 연장
+var renewArry = document.querySelectorAll(".renewBtn");
+for (var i = 0; i < renewArry.length; i++) {
+	renewArry[i].addEventListener('click', function() {
+		var renewConfirm = confirm("해당 도서를 7일 연장하시겠습니까?")
+		if(renewConfirm){
+			var trObj = this.parentElement.parentElement;
+			target = trObj.querySelector(".returnDate");
+			target.innerHTML = "21.08.07";	
+		}
+	})
+}
+</script>
+</html>

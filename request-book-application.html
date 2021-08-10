@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/request-book-application.css">
+  <link rel="stylesheet" href="../css/nav_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/291d90d700.js" crossorigin="anonymous"></script>
+  <script src="../js/request-book-application.js" defer></script>
+  <script src="../js/nav_active.js" defer></script>
+  <title>boda Library</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <ul class="logo">
+        <li><img src="../img/BODA_logo.png" onclick="location.href='main_home.html'"></li>
+      </ul>
+      <form class="search_bar">
+        <input type="text" id="input" placeholder="무엇을 찾고 계신가요?">
+        <button type="submit" id="btn" onkeydown="enterSearch()"><img id="nav_img" src="../img/BODA_search.png"></button>
+      </form>
+    </div>
+
+    <div class="menu-wrapper">
+      <ul class="menu">
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li class="menu1" onclick="doDisplay()"><i class="fas fa-user-circle"></i></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 토글하면 나오는 메뉴바 -->
+  <nav class="navbar2">
+    <ul class="side_menu1">
+      <li><a href="#"><b>대출도서 관리</b></a>
+        <a href="#">대출도서 조회하기</a>
+        <a href="#">대출도서 연장하기</a>
+        <a href="#">연체일 확인하기</a>
+        <a href="#"><b>희망도서관리</b></a></li>
+      <li><a href="#"><b>회원정보 수정</b></a>
+        <a href="#"><b>로그아웃</b></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- <header>
+    <a class="logo-link" href="#"><img class="logo" src="img/boda-logo.png" alt="logo-img"></a>
+    <div class="search-bar">
+      <input class="search" type="search" placeholder="무엇을 찾고 계신가요?"></input>
+      <button class="search-button"><img src="img/search-button.png" alt="serarch-button-img"></button>
+    </div>
+    <div class="member-navbar">
+      <span class="login"><a href="#">Login</a></span>
+      <span class="sign-up"><a href="#">Sign up</a></span>
+      <a href="#"><i class="fas fa-user"></i></a>
+    </div>
+  </header> -->
+
+
+  <!--  Content navbar-->
+  <section class="navbar">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="content-navbar">
+          <span class="content-info">희망도서 신청</span>
+        </div>
+        <div class="content-directory">
+          <i class="fas fa-home"></i>
+          <span class="directory-root"> > 마이 페이지 > 희망도서 신청내역 > 희망도서 신청</span>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <button class="regist-button">등록하기</button>
+        <button class="cancel-button">취소</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- My page & Request List -->
+  <div class="mypage-request-list">
+
+    <!-- My page navbar -->
+    <section class="mypage-navbar">
+      <div class="mypage">
+        <ul class="mypage-list">
+          <li class="mypage-navbar-header">마이페이지</li>
+          <li><a href="#">회원정보 수정</a></li>
+          <li><a href="#">대출도서 조회</a></li>
+          <li><a href="#">대출도서 연장</a></li>
+          <li><a href="#">연체일 확인</a></li>
+          <li><a href="#">희망도서 신청</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Request Book Application -->
+    <section class="request-wrapper-all">
+      <div class="request-wrapper">
+        <div class="request-header">
+          <span>신청자 정보</span>
+        </div>
+        <div class="request-contents">
+          <div class="request-content">
+            <form name="profile" action="" method="post" autocomplete="on">
+              <div class="user-info">
+                <span class="name">신청자명</span>
+                <label for="tel">연락처</label>
+                <label for="email">이메일 주소</label>
+              </div>
+              <div class="user-info-input">
+                <span class="user-name">홍길동</span>
+                <div class="phone">
+                  <select name="agency">
+                    <option value="sk">SKT</option>
+                    <option value="kt">KT</option>
+                    <option value="lg">LGU+</option>
+                  </select>
+                  <input type="tel" id="tel"
+                    oninput="this.value=this.value.replace(/[^0-9.]/g,'').replace(/(\..*)\./g, '$1');"> - <input
+                    type="tel" oninput="this.value=this.value.replace(/[^0-9.]/g,'').replace(/(\..*)\./g, '$1');">
+                </div>
+                <div class="email-adress">
+                  <input type="email" id="email"> @
+                  <select name="email">
+                    <option value="direct-input">직접입력</option>
+                    <option value="naver">naver.com</option>
+                    <option value="google">google.com</option>
+                    <option value="google">daum.net</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="request-wrapper">
+            <div class="request-header">
+              <span>희망도서 정보</span>
+            </div>
+            <div class="request-content">
+              <form name="application-info" action="" method="post">
+                <div class="application-info">
+                  <label for="book-name">희망 도서명</label>
+                  <label for="writer">저자</label>
+                  <label for="publisher">출판사</label>
+                  <label for="date">발행년도</label>
+                  <label for="remark">비고</label>
+                </div>
+                <div class="application-input">
+                  <input type="text" id="book-name">
+                  <input type="text" id="writer">
+                  <input type="text" id="publisher">
+                  <input type="text" id="date">
+                  <textarea name="remark" rows="4" cols="70"></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</body>
+
+</html>

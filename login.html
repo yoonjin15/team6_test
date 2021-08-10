@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/450c3e4f96.js" crossorigin="anonymous"></script>
+<script src="#" defer></script>
+<title>boda library login</title>
+<link rel="stylesheet" href="../css/login_style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<script>
+/*  */
+</script>
+
+</head>
+<body  class="bg">
+		<section class="rectangle">
+		<div></div>
+		<ul class="login_logo">
+			<li><a href="main_home.html"><img src="../image/BODA_logo.png" onclick="location.href='main_home.html'"></a></li>
+			<li></li>		
+		</ul>
+				
+		<form class="login_form">		
+			<input id="login_email" type="text" placeholder="email "><br>
+			<input id="login_pw" type="password" placeholder="password ">
+		</form>
+		
+		<ul class="logBtn">
+			<li><button type="submit" id="logBtn" onclick="logCheck()">로그인</button></li>
+		</ul>
+		<ul class="regMem_ForgotPW">
+			<li><a href="signup.html">회원가입 ></a></li>
+			<li><a href="#">|</a></li>
+			<li><a href="forgotPW.html#">비밀번호 찾기 ></a></li>
+		</ul>
+	</section>
+</body>
+<script type="text/javascript">	
+
+	function logCheck() {
+		   var idVal = document.querySelector("#login_email");
+		   var passVal = document.querySelector("#login_pw");
+		   if(idVal.value!=""||passVal.value!=""){
+		      // 임의로 DB에 himan&&7777있다고 가정
+		      if (idVal.value=="himan" && passVal.value=="7777" ) {
+		         alert("로그인 성공");
+		         location.href = "main_home2.html";
+		      }else if(idVal.value=="admin" && passVal.value=="8888"){
+		    	  alert("관리자 로그인 성공");
+			      location.href = "admin_rent.html";
+		      }else if(idVal.value=="" && passVal.value==""){
+		    	  alert("아이디와 비밀번호를 입력해주세요");
+		    	  idVal.focus();
+		      }else if(idVal.value==""){
+		    	  alert("아이디를 입력해주세요");
+		    	  idVal.focus();
+		      }else if(passVal.value==""){
+		    	  alert("비밀번호를 입력해주세요");
+		    	  passVal.focus();
+		      }
+		      else {
+		         alert("존재하지 않는 아이디 또는 비밀번호입니다.");
+		      }
+		   	} 
+		   	 
+		}
+	
+	
+	
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/450c3e4f96.js" crossorigin="anonymous"></script>
+<script src="#" defer></script>
+<title>boda library signup</title>
+<link rel="stylesheet" href="../css/signup_style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<script>
+/*  */
+</script>
+
+</head>
+<body  class="bg">
+		<section class="rectangle">
+		<div></div>
+		<ul class="login_logo">
+			<li><img src="../image/BODA_logo.png" onclick="location.href='main_home.html'"></li>
+			<li>본인인증</li>
+		</ul>
+		
+		
+		<form class="login_form">	
+			<label class="box-radio-input">
+			  <input type="radio" name="com" value="1" checked="checked"><span>SKT</span></label>
+			<label class="box-radio-input">
+			  <input type="radio" name="com" value="2"><span>KT</span></label>
+			<label class="box-radio-input">
+			  <input type="radio" name="com" value="3"><span>LG U+</span></label>
+			<label class="box-radio-input">
+			  <input type="radio" name="com" value="4"><span>알뜰폰</span></label>
+			<label>
+			<select>
+		        <option>+82</option>
+		        <option>+95</option>
+		        <option>+35</option>
+		        </select>
+		        <input id="pw_email" placeholder="'-'없이 숫자만 입력해주세요 ">
+			</label>
+			
+			<button type="submit" id="cerBtn" value="인증요청" onclick="ckBtn()">인증요청</button>
+			<br>
+			<input class="cer" id="login_pw" placeholder="인증번호 입력 ">
+			<br>
+			<input class="bod" id="login_pw" placeholder="생년월일 6자리 ">
+		</form>
+		
+		<ul class="logBtn">
+			<li><button type="submit" id="logBtn" onclick="nextPage()">다음</button></li>
+		</ul>
+		
+	</section>
+</body>
+<script type="text/javascript">
+	var pwObj = document.querySelector("#pw_email");
+	var cerObj = document.querySelector(".cer");
+	var bodObj = document.querySelector(".bod");
+	function nextPage(){
+		if(pwObj.value==""){
+			alert("번호를 입력해주세요");
+			pwObj.focus();
+		}else if(cerObj.value==""){
+			alert("인증번호를 입력해주세요");
+			cerObj.focus();
+		}else if(bodObj.value==""){
+			alert("생년월일을 입력해주세요");
+			bodObj.focus();
+		}else{
+			location.href="signup2.html";
+		}
+	}
+	
+
+
+</script>
+</html>

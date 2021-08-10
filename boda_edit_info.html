@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/boda_edit_info.css">
+<script src="https://kit.fontawesome.com/4849ba1eab.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<script src="../js/boda_edit_info.js" defer></script>
+<title>bodaLibrary</title>
+</head>
+<body>
+	 <nav class="navbar">
+    <div class="nav-wrapper">
+      <ul class="logo">
+        <li><a href="main_home.html"><img src="../image/BODA_logo.png" onclick="location.href='main_home.html'"></a></li>
+      </ul>
+      <form class="search_bar">
+        <input type="text" id="input" placeholder="무엇을 찾고 계신가요?">
+        <button type="submit" id="btn" onkeydown="enterSearch()"><img id="nav_img" src="../image/BODA_search.png"></button>
+      </form>
+    </div>
+    
+    <div class="menu-wrapper">
+      <ul class="menu">
+        <li><a href="login.html">Log in</a></li>
+        <li><a href="signup.html">Sign up</a></li>
+        <li class="menu1" onclick="doDisplay()"><i class="fas fa-user-circle"></i></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- 토글하면 나오는 메뉴바 -->
+  <nav class="navbar2">
+	   <ul class="side_menu1">
+	        <li><a href="#"><b>대출도서 관리</b></a>
+	        	<a href="boda_book_inquery.html">대출도서 조회하기</a>
+	        	<a href="boda_date_extend.html">대출도서 연장하기</a>
+	        	<a href="boda_check_overdate.html">연체일 확인하기</a>
+	        	<a href="#"><b>희망도서관리</b></a></li>
+	        <li><a href="boda_edit_info.html"><b>회원정보 수정</b></a>
+	        	<a href="#"><b>로그아웃</b></a>
+	        </li>
+	   </ul>
+   </nav>
+	<div class="middle">
+	<aside class="boda_mypage_menu">
+		<table class="mypage_menu" border>
+      		<tr id="mypage"><td scope="col">마이페이지</td></tr>
+      		<tr><td><a href="boda_edit_info.html" scope="col" id="select_menu">회원정보수정</a></td></tr>
+      		<tr><td><a href="boda_book_inquery.html" scope="col">대출도서 조회</a></td></tr>
+      		<tr><td><a href="boda_date_extend.html" scope="col">대출도서 연장</a></td></tr>
+      		<tr><td><a href="boda_check_overdate.html" scope="col">연체일 확인</a></td></tr>
+      		<tr><td><a href="#" scope="col">희망도서 신청</a></td></tr>
+      	</table>
+	</aside>
+	<section class="boda_edit_info">
+      <div class="content_direction">
+      	<a id="main_content_title"><b>회원정보수정</b></a>
+      	<i class="fas fa-home"></i>
+      	<a>마이페이지</a>
+      	<i class="fas fa-arrow-right"></i>
+      	<a>회원정보 수정</a>
+   	  </div>
+      <table class="main_content">
+      <thead><tr><td class="main_content_th" colspan="2"><b>회원 정보</b></td>
+        </tr></thead>
+      <tbody>
+      <tr><td class="main_th_size">이름</td>
+      	 <td class="main_td_size">홍길동</td></tr> 
+      <tr><td class="main_th_size">성별</td>
+      	<td class="main_td_size">남성</td></tr>
+      <tr><td class="main_th_size">생년월일</td>
+      	<td class="main_td_size">2000년07월21일</td></tr>
+      <tr><td class="main_th_size">이메일</td>
+      	<td class="main_td_size">
+      	<input type="text" value="hhh123" id="email_head" size="8"/>
+      	<span>@</span>
+      	<select id="email_foot">
+		<option value="">선택하세요</option>
+		<option value="naver.com" selected>naver.com</option>
+		<option value="daum.net">daum.net</option>
+		<option value="gmail.com">gmail.com</option>
+		</select></td></tr>
+      <tr><td class="main_th_size">핸드폰번호</td>
+      	<td class="main_td_size"><select id="phoneCk">
+		<option value="">선택하세요</option>
+		<option value="010" selected>010</option>
+		<option value="011">011</option>
+		<option value="017">017</option>
+		</select><span>-</span>
+		<input type="text" value="1234" id="inputMobile1" size="7" maxlength="4" />
+		<span>-</span>
+		<input type="text" value="5678" id="inputMobile2" size="7" maxlength="4" /></td>
+      </tr>
+      <tr>
+      	<td class="main_th_size">주소</td>
+      	<td class="main_td_size"><input type="text" readOnly/>
+			<button type="button" width="30px" height="30px">우편번호</button></br>
+			<input type="text" placeholder="상세 주소 입력" size="50"/>
+		</td>
+      </tr>
+      </tbody>
+      </table>
+      <div class="main_content_btn">
+      	<button id="main_content_btn1" onclick=editBtn()><b>수정하기</b></button>
+      	<button id="main_content_btn2" onclick=cancelBtn()><b>취소하기</b></button>
+      </div>
+	</section>
+	</div>
+</body>
+</html>

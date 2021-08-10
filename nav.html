@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/450c3e4f96.js" crossorigin="anonymous"></script>
+<script src="nav_active.js" defer></script>
+<title>boda library</title>
+<link rel="stylesheet" href="nav_style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<script>
+</script>
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <ul class="logo">
+        <li><img src="BODA_logo.png"></li>
+      </ul>
+      <form class="search_bar">
+        <input type="text" id="input" placeholder="무엇을 찾고 계신가요?">
+        <button type="submit" id="btn" onkeydown="enterSearch()"><img id="nav_img" src="BODA_search.png"></button>
+      </form>
+    </div>
+    
+    <div class="menu-wrapper">
+      <ul class="menu">
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li class="menu1" onclick="doDisplay()"><i class="fas fa-user-circle"></i></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- 토글하면 나오는 메뉴바 -->
+  <nav class="navbar2">
+	   <ul class="side_menu1">
+	        <li><a href="#"><b>대출도서 관리</b></a>
+	        	<a href="#">대출도서 조회하기</a>
+	        	<a href="#">대출도서 연장하기</a>
+	        	<a href="#">연체일 확인하기</a>
+	        	<a href="#"><b>희망도서관리</b></a></li>
+	        <li><a href="#"><b>회원정보 수정</b></a>
+	        	<a href="#"><b>로그아웃</b></a>
+	        </li>
+	   </ul>
+   </nav>
+</body>
+
+<script type="text/javascript">
+/*
+
+*/
+</script>
+</html>

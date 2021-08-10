@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>boda Library</title>
+<link rel="stylesheet" type="text/css" href="../css/admin_book_add.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+		<header class="header">
+		<img id="boda" src="../image/BODA_logo.png" alt="boda library" onclick="location.href='main_home.html'">
+		<a href="main_home.html"><span id="logout">Logout</span></a>
+		
+		 </header>
+		
+		<main class="main">
+		<nav class="side_nav">
+			<ul>
+				<li class="rtPage"><a href="admin_rent.html">대출/반납</a></li>
+				<li>회원관리</li>
+				<li class="bmPage"><a href="admin_book_delete.html">도서관리</a></li>
+			</ul>
+		</nav>
+		<section class="book_list">
+		<div class="content_top">
+		<span class="subject">도서관리</span>
+		</div>
+		
+		<div class="content">
+			<span id="sub_subject">추가 도서 정보</span>
+		<div class="form">
+					<table>
+						<tr>
+							<th>도서명</th>
+							<td><input type="text" id="bookName" /></td>
+							<td id="imageTd" rowspan="5"><div id="image">IMAGE</div> 
+							<input type="file" name="bookImg" id="bookImgImageFileUpload"
+								accept="image/png, image/jpeg"></td>
+						</tr>
+						<tr>
+							<th>청구기호</th><td><input type="text" id="callNum" /></td>
+						</tr>
+						<tr>
+							<th>십진분류번호</th><td><input type="text" id="bcd" /></td>
+						</tr>
+						<tr>
+							<th>저자</th><td><input type="text" id="writer" /></td>
+						</tr>
+						<tr>
+							<th>출판사</th><td><input type="text" id="publisher" /></td>
+						</tr>
+						<tr>
+							<th>발행년도</th><td><input type="text" id="publishYear" /></td>
+						</tr>
+					</table>
+					<div id="buttons">
+						<input type="button" onclick="addBook()" value="등록하기"
+							id="submitBtn" /> <input type="button" onclick="history.back();"
+							value="취소" id="cancelBtn" />
+					</div>
+				</div>
+		</div>
+		</section>
+		</main>
+		<footer class="footer"> </footer>
+	
+</body>
+<script type="text/javascript">
+function addBook(){
+	var bookName = document.querySelector("#bookName");
+	var bookID = document.querySelector("#bookID");
+	var writer = document.querySelector("#writer");
+	var publisher = document.querySelector("#publisher");
+	if(bookName.value == ""){
+		alert("도서명을 입력해주세요");
+		bookName.focus();
+	}else if(writer.value == ""){
+		alert("저자를 입력해주세요");
+		writer.focus();
+	}else if(publisher.value == ""){
+		alert("출판사를 입력해주세요");
+		publisher.focus();
+	}else if(callNum.value == ""){
+		alert("청구기호를 입력해주세요");
+		callNum.focus();
+	}else if(bcd.value == ""){
+		alert("십진분류번호를 입력해주세요");
+		bcd.focus();
+	}else{
+		alert("도서가 등록되었습니다!")
+		location.href="admin_book_delete.html";
+	}
+}
+</script>
+</html>
